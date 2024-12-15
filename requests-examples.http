@@ -1,0 +1,55 @@
+# примеры API-запросов
+
+@baseUrl = http://127.0.0.1:5000
+
+
+# Запрос на базовую страницу
+GET {{baseUrl}}
+
+###
+
+# создание юзера
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "name": "Кирилл",
+    "password": "1"
+}
+
+###
+
+# создание объявления 
+POST {{baseUrl}}/announcement
+Content-Type: application/json
+
+{
+    "title": "Test 1",
+    "description": "TEST test",
+    "author": "TestUser1"
+}
+
+
+###
+
+# удалить объявление по ID
+DELETE {{baseUrl}}/announcement/1
+
+###
+
+# изменить текст объявления
+PATCH {{baseUrl}}/announcement/2
+Content-Type: application/json
+
+{
+    "title": "Test 2",
+    "description": "TEST test",
+    "author": "TestUser2"
+}
+
+###
+
+# получить все объявления
+GET {{baseUrl}}/announcements
+
+###
